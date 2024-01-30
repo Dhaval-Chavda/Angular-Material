@@ -1,0 +1,14 @@
+<form>
+  <div *ngFor="let document of documents; let i = index">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Document Name</mat-label>
+      <input matInput placeholder="Enter Document Name..." [(ngModel)]="document.name" name="document{{i}}" required>
+    </mat-form-field>
+    <button mat-mini-fab color="warn" (click)="removeDocument(i)">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+  <button mat-mini-fab color="warn" (click)="addDocument()">
+    <mat-icon>add</mat-icon>
+  </button>
+</form>
